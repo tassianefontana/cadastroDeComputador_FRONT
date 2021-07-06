@@ -1,1 +1,46 @@
-<p>cadastrar works!</p>
+
+    <mat-card>
+        <mat-card-title> Cadastrar Computador </mat-card-title>
+        <mat-card-content>
+            
+                <div>
+                    <mat-form-field>
+                        <mat-label for="data">Proprietário</mat-label>
+                        <input matInput placeholder="proprietário" type="text" name="data" [(ngModel)]="dono" />
+                    </mat-form-field>
+                    
+                    <mat-form-field>
+                        <mat-label for="data">Placa Mãe</mat-label>
+                        <input matInput placeholder="placa mãe" type="text" name="data" [(ngModel)]="placamae" />
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label for="data">Processador</mat-label>
+                        <input matInput placeholder="processador" type="text" name="data" [(ngModel)]="processador" />
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label for="data">Memória</mat-label>
+                        <input matInput placeholder="memória" type="text" name="data" [(ngModel)]="memoria" />
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label for="data">Armazenamento</mat-label>
+                        <input matInput placeholder="armazenamento" type="text" name="data" [(ngModel)]="armazenamento" />
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label for="data">Fonte</mat-label>
+                        <input matInput placeholder="fonte" type="text" name="data" [(ngModel)]="fonte" />
+                    </mat-form-field>
+                    
+                    
+                    <button mat-raised-button color="primary" (click)="cadastrar()">Cadastrar</button>
+                </div>
+
+                            
+            </mat-card-content>
+        </mat-card>
+        
+   
+

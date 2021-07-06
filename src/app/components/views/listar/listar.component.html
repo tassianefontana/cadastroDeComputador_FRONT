@@ -1,1 +1,49 @@
-<p>listar works!</p>
+<h1>Computadores cadastrados</h1>
+<div>
+
+<table mat-table [dataSource]="computadores" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="dono">
+      <th mat-header-cell *matHeaderCellDef> Proprietário </th>
+      <td mat-cell *matCellDef="let computador"> {{computador.dono}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="placamae">
+        <th mat-header-cell *matHeaderCellDef> Placa Mãe </th>
+        <td mat-cell *matCellDef="let computador"> {{computador.placaMae}} </td>
+      </ng-container>
+
+    <ng-container matColumnDef="processador">
+    <th mat-header-cell *matHeaderCellDef> Processador </th>
+    <td mat-cell *matCellDef="let computador"> {{computador.processador}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="memoria">
+        <th mat-header-cell *matHeaderCellDef> Memória </th>
+        <td mat-cell *matCellDef="let computador"> {{computador.memoria}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="armazenamento">
+        <th mat-header-cell *matHeaderCellDef> Armazenamento </th>
+        <td mat-cell *matCellDef="let computador"> {{computador.armazenamento}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fonte">
+        <th mat-header-cell *matHeaderCellDef> Fonte </th>
+        <td mat-cell *matCellDef="let computador"> {{computador.fonte}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="criadoem">
+        <th mat-header-cell *matHeaderCellDef> Data de cadastro </th>
+        <td mat-cell *matCellDef="let computador"> {{computador.createdAt | date: "MMMM - yyyy"}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="deletar">
+        <th mat-header-cell *matHeaderCellDef> Deletar </th>
+        <td mat-cell *matCellDef="let computador"> <button mat-raised-button color="primary" (click)="deletar(computador._id)"><mat-icon class="material-icons-outlined" mat-list-icon>delete</mat-icon></button> </td>
+      </ng-container>
+     
+    <tr mat-header-row *matHeaderRowDef="listarColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: listarColumns;"></tr>
+  </table>
+</div>
